@@ -1,11 +1,16 @@
-import requests
 
-def retrieve():
-    name = input("please enter the username you wish to search: ")
-    string = "https://api.github.com/users/" + name
-    response = requests.get(string)
-    print(response.json())
+from website import create_app
+
+app = create_app()
+
+
+# def retrieve():
+#     token = input("please enter your github user token: ")
+#     gh = Github(token)
+#     usr = gh.get_user()
+#     print("your username is: " + usr.login)
 
 
 if __name__ == '__main__':
-    retrieve()
+    app.run(debug=True)
+    # retrieve()
